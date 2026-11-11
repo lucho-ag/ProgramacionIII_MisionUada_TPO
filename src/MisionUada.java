@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -613,11 +614,13 @@ public class MisionUada {
         while (actual.padre != null) {
             Paso paso = new Paso(actual.tramo.origen, actual.tramo.destino, actual.tramo.modo,
                     actual.tramo.espera, actual.bateria, actual.tiempo);
-            ruta.pasos.add(0, paso);                                   // agregarAlInicio
-            ruta.secuencia.add(0, actual.lugar);
+            ruta.pasos.add(paso);
+            ruta.secuencia.add(actual.lugar);
             actual = actual.padre;
         }
-        ruta.secuencia.add(0, actual.lugar);                           // la raíz: Aula 348
+        ruta.secuencia.add(actual.lugar);                              // la raíz: Aula 348
+        Collections.reverse(ruta.pasos);
+        Collections.reverse(ruta.secuencia);
         ruta.tiempoTotal = n.tiempo;
         ruta.bateriaFinal = n.bateria;
         return ruta;
