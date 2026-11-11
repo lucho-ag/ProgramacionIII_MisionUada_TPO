@@ -1,0 +1,61 @@
+# Caso 4 (sin solucion): 20 estaciones, 4 obligatorias, 1 zona prohibida, 3 ventanas; aristas DIRIGIDAS (origen -> destino)
+# LUGAR;nombre;aula(0 si no);x;y;obligatorio;prohibido
+LUGAR;Aula 348;348;0;0;0;0
+LUGAR;Hall Principal;0;30;0;0;0
+LUGAR;Aula 101;101;30;-40;0;0
+LUGAR;Aula 102;102;60;-40;0;0
+LUGAR;Aula 103;103;90;-40;0;0
+LUGAR;Pasillo Sur;0;60;0;0;0
+LUGAR;Comedor;0;90;0;1;0
+LUGAR;Aula 201;201;30;40;0;0
+LUGAR;Aula 202;202;60;40;0;0
+LUGAR;Escalera B;0;90;40;0;0
+LUGAR;Aula 301;301;120;40;0;0
+LUGAR;Aula 302;302;120;0;0;0
+LUGAR;Gimnasio;0;120;-40;1;0
+LUGAR;Auditorio B;0;0;40;0;0
+LUGAR;Rectorado;0;0;80;1;0
+LUGAR;Pasillo Norte;0;30;80;0;0
+LUGAR;Aula 401;401;60;80;0;0
+LUGAR;Archivo;0;90;80;1;0
+LUGAR;Zona refaccion;0;60;60;0;1
+LUGAR;Biblioteca Central;0;0;-40;0;0
+# ARISTA;origen;destino;segundos;modos (C=caminando, S=saltando, P=patas para arriba)
+ARISTA;Aula 348;Hall Principal;40;CS
+ARISTA;Aula 348;Auditorio B;55;CS
+ARISTA;Hall Principal;Aula 101;40;CS
+ARISTA;Hall Principal;Pasillo Sur;40;CS
+ARISTA;Hall Principal;Aula 201;55;CP
+ARISTA;Aula 101;Aula 102;40;CS
+ARISTA;Aula 101;Biblioteca Central;40;CS
+ARISTA;Biblioteca Central;Aula 348;40;CS
+ARISTA;Aula 102;Aula 103;40;CS
+ARISTA;Aula 102;Pasillo Sur;40;CP
+ARISTA;Aula 103;Gimnasio;40;CS
+ARISTA;Aula 103;Aula 302;55;CS
+ARISTA;Pasillo Sur;Comedor;40;CS
+ARISTA;Pasillo Sur;Aula 202;55;CS
+ARISTA;Comedor;Aula 302;40;CS
+ARISTA;Comedor;Escalera B;55;CP
+ARISTA;Aula 302;Gimnasio;40;CS
+ARISTA;Aula 302;Aula 301;40;CS
+ARISTA;Gimnasio;Aula 102;70;CP
+ARISTA;Aula 201;Aula 202;40;CS
+ARISTA;Aula 201;Pasillo Norte;55;CS
+ARISTA;Aula 202;Escalera B;40;CS
+ARISTA;Aula 202;Zona refaccion;30;CS
+ARISTA;Escalera B;Aula 301;40;CS
+ARISTA;Aula 301;Comedor;55;CS
+ARISTA;Auditorio B;Aula 201;55;CS
+ARISTA;Auditorio B;Rectorado;40;CS
+ARISTA;Rectorado;Pasillo Norte;40;CS
+ARISTA;Pasillo Norte;Aula 401;40;CS
+ARISTA;Pasillo Norte;Zona refaccion;30;CS
+ARISTA;Aula 401;Escalera B;55;CS
+ARISTA;Zona refaccion;Archivo;40;CS
+ARISTA;Archivo;Aula 401;40;CS
+# VENTANA;lugar;desde;hasta (cerrado en [desde,hasta], en segundos)
+VENTANA;Comedor;120;150
+VENTANA;Aula 202;60;90
+VENTANA;Aula 401;200;250
+INICIO;Aula 348

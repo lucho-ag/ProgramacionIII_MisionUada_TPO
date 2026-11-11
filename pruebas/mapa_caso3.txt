@@ -1,0 +1,54 @@
+# Caso 3 (con solucion): 20 estaciones, 4 obligatorias, 1 zona prohibida, 3 ventanas; aristas DIRIGIDAS (origen -> destino)
+# LUGAR;nombre;aula(0 si no);x;y;obligatorio;prohibido
+LUGAR;Aula 348;348;0;0;0;0
+LUGAR;Pasillo P2;0;30;0;0;0
+LUGAR;Aula 205;205;60;0;0;0
+LUGAR;Aula 206;206;60;30;0;0
+LUGAR;Cafeteria;0;90;30;1;0
+LUGAR;Escalera Norte;0;30;50;0;0
+LUGAR;Aula 310;310;0;50;0;0
+LUGAR;Sala de profesores;0;0;90;0;0
+LUGAR;Aula 421;421;30;90;0;0
+LUGAR;Biblioteca;0;60;90;1;0
+LUGAR;Aula 422;422;90;90;0;0
+LUGAR;Terraza;0;120;60;0;0
+LUGAR;Ascensor;0;120;0;0;0
+LUGAR;Aula 507;507;90;0;0;0
+LUGAR;Laboratorio 2;0;120;-40;1;0
+LUGAR;Aula 508;508;90;-40;0;0
+LUGAR;Fotocopiadora;0;60;-40;1;0
+LUGAR;Aula 109;109;30;-40;0;0
+LUGAR;Obra en curso;0;60;60;0;1
+LUGAR;Deposito;0;0;-40;0;0
+# ARISTA;origen;destino;segundos;modos (C=caminando, S=saltando, P=patas para arriba)
+ARISTA;Aula 348;Pasillo P2;40;CS
+ARISTA;Aula 348;Aula 310;55;CS
+ARISTA;Pasillo P2;Aula 205;40;CS
+ARISTA;Pasillo P2;Escalera Norte;55;CP
+ARISTA;Pasillo P2;Obra en curso;40;CS
+ARISTA;Aula 205;Aula 206;40;C
+ARISTA;Aula 205;Aula 507;40;CS
+ARISTA;Aula 206;Cafeteria;40;CS
+ARISTA;Aula 206;Escalera Norte;40;C
+ARISTA;Cafeteria;Aula 507;55;CP
+ARISTA;Escalera Norte;Aula 310;40;CS
+ARISTA;Escalera Norte;Biblioteca;60;CS
+ARISTA;Aula 310;Sala de profesores;45;C
+ARISTA;Sala de profesores;Aula 421;35;CS
+ARISTA;Aula 421;Biblioteca;35;CS
+ARISTA;Biblioteca;Aula 422;35;C
+ARISTA;Aula 422;Terraza;45;CS
+ARISTA;Terraza;Cafeteria;40;CS
+ARISTA;Terraza;Ascensor;55;C
+ARISTA;Ascensor;Laboratorio 2;40;CS
+ARISTA;Aula 507;Laboratorio 2;55;CP
+ARISTA;Laboratorio 2;Aula 508;35;CS
+ARISTA;Aula 508;Fotocopiadora;35;CS
+ARISTA;Fotocopiadora;Aula 109;35;C
+ARISTA;Aula 109;Deposito;35;CP
+ARISTA;Deposito;Aula 348;40;CS
+# VENTANA;lugar;desde;hasta (cerrado en [desde,hasta], en segundos)
+VENTANA;Cafeteria;90;130
+VENTANA;Biblioteca;200;260
+VENTANA;Laboratorio 2;250;300
+INICIO;Aula 348

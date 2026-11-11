@@ -1,0 +1,61 @@
+# Caso 6 (sin solucion): 20 estaciones, 4 obligatorias, 1 zona prohibida, 3 ventanas; aristas DIRIGIDAS (origen -> destino)
+# LUGAR;nombre;aula(0 si no);x;y;obligatorio;prohibido
+LUGAR;Aula 348;348;0;0;0;0
+LUGAR;Pasillo Central;0;30;0;0;0
+LUGAR;Aula 501;501;60;0;0;0
+LUGAR;Aula 502;502;90;0;0;0
+LUGAR;Aula 503;503;120;0;0;0
+LUGAR;Comedor Docente;0;30;-40;1;0
+LUGAR;Aula 511;511;60;-40;0;0
+LUGAR;Aula 512;512;90;-40;0;0
+LUGAR;Aula 513;513;120;-40;0;0
+LUGAR;Escalera Oeste;0;0;40;0;0
+LUGAR;Aula 521;521;30;40;0;0
+LUGAR;Aula 522;522;60;40;0;0
+LUGAR;Sala de servidores;0;10;-20;1;0
+LUGAR;Fotocopiado;0;90;40;1;0
+LUGAR;Aula 531;531;120;40;0;0
+LUGAR;Sala de reuniones;0;0;80;1;0
+LUGAR;Aula 541;541;30;80;0;0
+LUGAR;Terraza Oeste;0;60;80;0;0
+LUGAR;Obra Sur;0;75;-20;0;1
+LUGAR;Deposito Norte;0;90;80;0;0
+# ARISTA;origen;destino;segundos;modos (C=caminando, S=saltando, P=patas para arriba)
+ARISTA;Aula 348;Pasillo Central;40;CS
+ARISTA;Aula 348;Escalera Oeste;55;CP
+ARISTA;Pasillo Central;Aula 501;40;CS
+ARISTA;Pasillo Central;Comedor Docente;55;CS
+ARISTA;Pasillo Central;Sala de servidores;40;CS
+ARISTA;Pasillo Central;Aula 511;50;CP
+ARISTA;Aula 501;Aula 502;40;CS
+ARISTA;Aula 501;Aula 522;40;CS
+ARISTA;Aula 502;Aula 503;40;CS
+ARISTA;Aula 502;Aula 512;40;CP
+ARISTA;Aula 503;Aula 513;40;CS
+ARISTA;Aula 503;Aula 531;55;C
+ARISTA;Comedor Docente;Aula 511;40;CS
+ARISTA;Comedor Docente;Sala de servidores;40;CS
+ARISTA;Aula 511;Aula 512;40;CS
+ARISTA;Aula 511;Obra Sur;30;CS
+ARISTA;Aula 511;Aula 348;70;CP
+ARISTA;Aula 512;Aula 513;40;CP
+ARISTA;Aula 512;Aula 502;40;CS
+ARISTA;Escalera Oeste;Aula 521;40;CS
+ARISTA;Escalera Oeste;Sala de reuniones;40;CP
+ARISTA;Aula 521;Aula 522;40;CS
+ARISTA;Aula 521;Aula 541;55;CS
+ARISTA;Aula 522;Fotocopiado;40;CS
+ARISTA;Aula 522;Terraza Oeste;40;CP
+ARISTA;Fotocopiado;Aula 531;40;CS
+ARISTA;Fotocopiado;Deposito Norte;40;CS
+ARISTA;Aula 531;Aula 503;55;CS
+ARISTA;Sala de reuniones;Aula 541;40;CS
+ARISTA;Aula 541;Terraza Oeste;40;CS
+ARISTA;Terraza Oeste;Deposito Norte;40;CS
+ARISTA;Terraza Oeste;Aula 522;40;CS
+ARISTA;Deposito Norte;Fotocopiado;40;CS
+# VENTANA;lugar;desde;hasta (cerrado en [desde,hasta], en segundos)
+VENTANA;Comedor Docente;100;140
+VENTANA;Aula 522;200;240
+VENTANA;Aula 541;60;90
+INICIO;Aula 348

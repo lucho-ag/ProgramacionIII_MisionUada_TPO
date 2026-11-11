@@ -1,0 +1,61 @@
+# Caso 5 (con solucion): 20 estaciones, 4 obligatorias, 1 zona prohibida, 3 ventanas; aristas DIRIGIDAS (origen -> destino)
+# LUGAR;nombre;aula(0 si no);x;y;obligatorio;prohibido
+LUGAR;Aula 348;348;0;0;0;0
+LUGAR;Pasillo A;0;30;0;0;0
+LUGAR;Aula 111;111;60;0;0;0
+LUGAR;Aula 112;112;90;0;0;0
+LUGAR;Kiosco;0;60;-40;1;0
+LUGAR;Aula 121;121;30;-40;0;0
+LUGAR;Aula 122;122;0;-40;0;0
+LUGAR;Escalera Este;0;120;0;0;0
+LUGAR;Aula 231;231;120;40;0;0
+LUGAR;Sala de computos;0;90;40;1;0
+LUGAR;Aula 232;232;60;40;0;0
+LUGAR;Pasillo B;0;30;40;0;0
+LUGAR;Aula 241;241;0;40;0;0
+LUGAR;Hemeroteca;0;0;80;1;0
+LUGAR;Aula 351;351;30;80;0;0
+LUGAR;Mirador;0;60;80;0;0
+LUGAR;Aula 352;352;90;80;0;0
+LUGAR;Capilla;0;120;80;1;0
+LUGAR;Obra Norte;0;60;60;0;1
+LUGAR;Salida de emergencia;0;120;-40;0;0
+# ARISTA;origen;destino;segundos;modos (C=caminando, S=saltando, P=patas para arriba)
+ARISTA;Aula 348;Pasillo A;40;CS
+ARISTA;Aula 348;Aula 241;55;CP
+ARISTA;Pasillo A;Aula 111;40;CS
+ARISTA;Pasillo A;Aula 121;55;CS
+ARISTA;Pasillo A;Pasillo B;40;CP
+ARISTA;Pasillo A;Obra Norte;50;CS
+ARISTA;Aula 111;Aula 112;40;CS
+ARISTA;Aula 111;Kiosco;40;CP
+ARISTA;Aula 111;Aula 232;40;C
+ARISTA;Aula 112;Escalera Este;40;CS
+ARISTA;Aula 112;Kiosco;55;CS
+ARISTA;Kiosco;Aula 121;40;CS
+ARISTA;Kiosco;Salida de emergencia;60;C
+ARISTA;Salida de emergencia;Escalera Este;55;CP
+ARISTA;Escalera Este;Aula 231;55;CS
+ARISTA;Escalera Este;Aula 112;40;CS
+ARISTA;Aula 231;Sala de computos;40;CS
+ARISTA;Sala de computos;Aula 232;40;CP
+ARISTA;Sala de computos;Aula 352;55;C
+ARISTA;Sala de computos;Escalera Este;40;CS
+ARISTA;Aula 232;Pasillo B;40;CS
+ARISTA;Aula 232;Mirador;55;CS
+ARISTA;Pasillo B;Aula 241;40;CP
+ARISTA;Pasillo B;Aula 351;55;CS
+ARISTA;Pasillo B;Obra Norte;30;CS
+ARISTA;Aula 241;Hemeroteca;45;CS
+ARISTA;Hemeroteca;Aula 351;35;C
+ARISTA;Aula 351;Mirador;35;CS
+ARISTA;Mirador;Aula 352;35;C
+ARISTA;Aula 352;Capilla;35;CS
+ARISTA;Capilla;Aula 231;40;CS
+ARISTA;Aula 121;Aula 122;40;CS
+ARISTA;Aula 122;Aula 348;40;CP
+# VENTANA;lugar;desde;hasta (cerrado en [desde,hasta], en segundos)
+VENTANA;Kiosco;100;160
+VENTANA;Sala de computos;200;260
+VENTANA;Aula 241;30;70
+INICIO;Aula 348
